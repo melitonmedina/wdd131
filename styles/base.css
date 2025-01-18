@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rock+Salt&display=swap");
+
+* {
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+:root {
+    --heading-font: "Rock salt", cursive;
+    --paragraph-font: "Open Sans", Sans-serif;
+}
+
+.index-header{
+    display: grid;
+    margin: 10px;
+
+}
+
+.index-header h1{
+    background-color:  #054f62;
+    font-size: 1.5em;
+    padding: 15px;
+    color: rgb(252, 247, 247);
+    text-align: center;
+}
+.index-header span {
+    font-size: 0.75em;
+    color: rgb(235, 233, 231);
+    
+}
+
+.index-navegation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-around;
+    list-style: none;
+    background: #020708d3;
+    padding: 0%;
+    
+}
+
+.index-navegation li{
+    padding: 12px;
+}
+
+.index-navegation li:hover {
+    background-color: rgb(244, 110, 244);
+}
+
+.index-navegation a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+
+/* beginning of top card */
+.top-card #top-h2 {
+    grid-area: top-h2;
+
+}
+
+.top-card #top-p {
+    grid-area: top-p;
+    padding: 20px;
+    margin: 15px;
+
+
+}
+
+.top-card #top-img {
+    grid-area: top-img;
+    margin: 5px;
+    justify-self: right;
+    margin-right: 15px;
+}
+
+.top-card #bot-h2 {
+    grid-area: bot-h2;
+    display: block;
+    text-align: center;
+    margin: 15px;
+    border-bottom: 1px solid black;
+}
+
+.top-card #bot-p {
+    grid-area: bot-p;
+    padding: 20px;
+    font-family: var(--paragraph-font)
+}
+
+.top-card #bot-fig {
+    grid-area: bot-fig;
+    align-self:center;
+    justify-self: center;
+}
+
+/* assigning the areas */
+.top-card {
+
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 0.5fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    'top-h2 top-h2 top-h2'
+    'top-p top-p top-img'
+    'bot-h2 bot-h2 top-img'
+    'bot-fig bot-p top-img';
+}
+
+/* the section for the aside will be part of the global grid by the class "main" */
+
+.index-main {
+    display: grid;
+    justify-self: center;
+    gap: 1em;
+    margin: 25px;
+    grid-template-columns: 2fr 0.75fr;
+    grid-template-rows: auto;
+    max-width: 700px;
+    
+    
+}
+
+.aside-container h2, #top-h2{
+    padding: 5px;
+    text-align: center;
+    background-color: #054f62;
+    color: white;
+    font-family: var(--heading-font);
+
+}
+
+.top-card, .aside-container {
+    border: 2px solid lightgray;
+}
+
+.aside-container{
+    display: grid;
+    padding: 0;
+    grid-template-rows: max-content auto;
+
+}
+
+.aside-container h2 {
+    max-height: fit-content;
+}
+
+.aside-container nav {
+    align-content: space-evenly;
+}
+
+/* the footer section*/
+footer {
+    background-color: #054f62;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    /* position: absolute;
+    bottom: 0;
+    width: calc(100% - 10px); */
+}
