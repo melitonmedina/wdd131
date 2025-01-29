@@ -13,9 +13,9 @@ button.addEventListener('click', function(){
 
         //the delete button
         const deleteButton = document.createElement(`button`);        
-        deleteButton.textContent = `❌`;
+        deleteButton.textContent = `❌`;    
         deleteButton.className = 'deleteButton';
-
+        deleteButton.style.fontWeight = 100;
         //appending the list
         li.append(deleteButton);
         list.append(li);
