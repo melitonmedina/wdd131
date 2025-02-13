@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Lazy Load</title>
+    <meta name="description" content="This page will demonstrate lazy loading in action">
+    <meta name="author" content="Meliton Medina">
+    <link rel="stylesheet" href="styles.css/lazyload.css">
+    <script src="scripts/lazyload.js" defer></script>
+</head>
+<body>
+    <head>
+        <h1>Lazy Loading of Images Demonstration</h1>
+    </head>
+
+    <main>
+        <picture>
+            <img src="https://picsum.photos/id/0/400/600" alt="Opened laptop on wooden table" class="lazyload" loading="lazy" width="400" height="600"> 
+        </picture>
+        <picture>
+            <img src="https://picsum.photos/id/29/400/600" alt="Mountains with clear skies" class="lazyload" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://picsum.photos/id/37/400/600" alt="View of the ocean with plants at the beginning of the image" class="lazyload" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://picsum.photos/id/39/400/600" alt="record player" class="lazyload" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://picsum.photos/id/62/400/600" alt="country side at sunset" class="lazyload" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="https://picsum.photos/id/75/400/600" alt="Grape plant" class="lazyload" loading="lazy" width="400" height="600">
+        </picture>
+    </main>
+
+    <footer>
+        <p>&COPY; <span id="year"></span> ⛵ Meliton Medina Farro ⛵ NJ</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

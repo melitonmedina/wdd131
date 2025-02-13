@@ -1,0 +1,45 @@
+caption {
+    caption-side: bottom;
+    font-size: 1.2rem;
+    color: rgb(78, 76, 76);
+}
+
+table {
+    border: thin solid rgb(206, 201, 201);
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead th, thead td {
+    width: 100px;
+    padding: 10px;
+    border: 1px solid rgb(206, 201, 201);
+    text-align: center;
+    color: white;
+    
+}
+
+tbody th, tbody td {
+    width: 100px;
+    padding: 10px;
+    border: 1px solid rgb(206, 201, 201);
+    text-align: center;
+    color: rgb(6, 5, 5);
+
+}
+tbody tr:nth-of-type(even) {
+    background-color: rgb(235, 230, 230);
+}
+
+.dark-background {
+    background-color: black;
+    border: 1px solid black;
+    font-size: 1.5rem;
+}
+
+.grey-background {
+    background-color: rgb(72, 71, 71);
+    border: 1px solid black;
+    font-size: 1.5rem;
+
+}
