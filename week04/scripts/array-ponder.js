@@ -44,3 +44,8 @@ const arrfruits = ['watermelon', 'peach', 'apple', 'tomato', 'grape'];
 const reducedFruits = arrfruits.filter((item) => item.length < 6);
 
 // activity 5
+const arrindexes = [12, 34, 21, 54];
+const myindex = 21;
+
+const findMyIndex = arrindexes.indexOf(myindex);
+console.log(findMyIndex);
