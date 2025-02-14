@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Temples Album - Meliton Medina</title>
+    <meta name="description" content="This application will show a set of Temple Pictures and appropriatly use dynamic behavior to account for differnt screen sizes">
+    <meta name="author" content="Meliton Medina">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <script src="scripts/filtered-temples.js" defer></script> 
+</head>
+<body>
+    <header>
+        <h1 class="title">Temple Album</h1>
+        <button aria-label="menu button" id="hamButton"></button>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a id="home" class="anchor1" href="#">Home</a></li>
+                <li><a id="old" href="#">Old</a></li>
+                <li><a id="new" href="#">New</a></li>
+                <li><a id="large" href="#">Large</a></li>
+                <li><a id="small" href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Home</h2>
+        <div class="fig-container"></div>    
+    </main>
+
+    <footer>
+        <p>&COPY; <span id="year"></span> ⛵ Meliton Medina Farro ⛵ NJ</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+
+</body>
+</html>
