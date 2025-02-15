@@ -28,13 +28,14 @@ currentYear = currentYear.getFullYear();
 // assigning or populating the current year content
 document.querySelector('#year').textContent = `${currentYear}`;
 
-
 // beginning of last modified content
 let lastModified = document.lastModified;
 document.querySelector('#lastModified').textContent = `${lastModified}`
 
 
-//beginning of dynamically generated html
+
+
+
 const temples = [
     {
         templeName: "Aba Nigeria",
@@ -117,17 +118,43 @@ const temples = [
 ];
 
 // function to apply the correct filter
-function chooseFilter (idFilter) {
-    if(idFilter ==='old') {
+function chooseFilter (idFilter, temple) {
 
+
+    const yearRegex = /\b\d{4}\b/;
+    const year = parseInt(temple.dedicated.match(yearRegex)[0], 10);
+    
+
+    if(idFilter ==='old' && (year < 1900)
+    ) {
+        return true;
     }
+
+
+    if(idFilter ==='new' && (year > 2000)
+    ) {
+        return true;
+    }
+
+    if(idFilter ==='large' && (temple.area > 90000)
+    ) {
+        return true;
+    }
+
+    if(idFilter ==='small' && (temple.area < 10000)
+    ) {
+        return true;
+    }
+
+    else {
+        return false;
+    }
+
+    
 }
 
-function createTempleCard() {
-    temples.forEach(temple => {
+function createTempleCard(templeInfo) {
 
-        
-    
     let card = document.createElement("section");
     let name = document.createElement("h3");
     let location = document.createElement("p");
@@ -135,15 +162,15 @@ function createTempleCard() {
     let area = document.createElement("p");
     let img = document.createElement("img");
 
-    name.textContent = temple.templeName;
-    location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
+    name.textContent = templeInfo.templeName;
+    location.innerHTML = `<span class="label">Location:</span> ${templeInfo.location}`;
 
-    dedicated.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
+    dedicated.innerHTML = `<span class="label">Dedicated:</span> ${templeInfo.dedicated}`;
 
-    area.innerHTML = `<span class="label">Size:</span> ${temple.area} sq ft`;
+    area.innerHTML = `<span class="label">Size:</span> ${templeInfo.area} sq ft`;
 
-    img.setAttribute("src", temple.imageUrl);
-    img.setAttribute("alt",`${temple.templeName} Temple`);
+    img.setAttribute("src", templeInfo.imageUrl);
+    img.setAttribute("alt",`${templeInfo.templeName} Temple`);
     img.setAttribute("loading", "lazy");
 
     card.appendChild(name);
@@ -151,9 +178,40 @@ function createTempleCard() {
     card.appendChild(dedicated);
     card.appendChild(area);
     card.appendChild(img);
-
     document.querySelector('.fig-container').appendChild(card);
-});
 }
 
-createTempleCard();
+
+const container = document.querySelector('.nav');
+let anchorId = "";
+
+// Add a click event listener to the container
+container.addEventListener('click', (event) => {
+  // Check if the clicked element is an anchor (<a>)
+  if (event.target && event.target.tagName === 'A') {
+    anchorId= event.target.id;
+
+    //ai to remove all section elements
+    const sections = document.querySelector('.fig-container');
+    sections.querySelectorAll('section').forEach(section => section.remove());
+    
+    if (anchorId !== "home"){
+        const filteredList = temples.filter((temple) => chooseFilter(anchorId, temple));
+        filteredList.forEach(filterTemple => createTempleCard(filterTemple));
+        
+
+
+    }
+    //this is also another alternative
+    // temples.forEach(temple => {
+    //     chooseFilter(anchorId, temple);
+    // });
+    // }
+    
+
+    else {
+        temples.forEach(temple =>createTempleCard(temple))
+    }
+  
+}
+});

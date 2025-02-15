@@ -95,10 +95,10 @@ main h2 {
 
 .fig-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(410px, 1fr));
     grid-template-rows: auto;
-    gap: 50px;
-    margin: 25px;
+    grid-gap: 10px;
+
 
 }
 
@@ -106,14 +106,21 @@ main h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: antiquewhite;
+    width: 100%;
 }
 
 section img {
     /* flex: 1 1 100px; */
-    height:300px;
+    height:250px;
     width: 400px;
+    margin: 5%;
 
     /* object-fit: cover; */
+}
+
+section h3 {
+    margin: 15px;
 }
 
 footer {
