@@ -17,9 +17,24 @@ html {
 }
 
 body {
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(251, 250, 249);
+    
+
     font-family: "Roboto", sans-serif;
 
 }
+
+
+header, main, footer {
+    width: 100%;
+    height: auto;
+    
+}
+
 
 .title {
     position: relative;
@@ -85,6 +100,7 @@ body {
 }
 
 main {
+    flex: 1;
     max-width: 1000px;
 }
 
@@ -95,7 +111,7 @@ main h2 {
 
 .fig-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(410px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     grid-template-rows: auto;
     grid-gap: 10px;
 
@@ -108,15 +124,26 @@ main h2 {
     align-items: center;
     background-color: antiquewhite;
     width: 100%;
+    max-width: 400px;
+    /* max-width: 310px; */
 }
 
 section img {
     /* flex: 1 1 100px; */
-    height:250px;
-    width: 400px;
+    height:125px;
+    width: 200px;
     margin: 5%;
 
     /* object-fit: cover; */
+}
+
+section p {
+    font-size: 0.85rem;
+}
+
+.label {
+    color: rgb(105, 7, 105);;
+    font-weight: bold;;
 }
 
 section h3 {
@@ -124,9 +151,11 @@ section h3 {
 }
 
 footer {
+
     text-align: center;
     background-color: rgb(105, 7, 105);
     color: white;
+    align-self: center;
 }
 
 /* here goes the large version */
@@ -139,15 +168,18 @@ footer {
         background-color: rgb(105, 7, 105);
         justify-content: space-around;
         align-items: center;
+        
     }
 
     header nav {
         width: 100%;
+    
     }
     .menu {
         display: flex;
         list-style: none;
         justify-content: space-around;
+        
         
         
     }
