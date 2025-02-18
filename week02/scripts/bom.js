@@ -19,7 +19,7 @@ button.addEventListener('click', function(){
         //appending the list
         li.append(deleteButton);
         list.append(li);
-        list.appendChild(li);
+        //list.appendChild(li);
 
     }
     else (input.focus());
