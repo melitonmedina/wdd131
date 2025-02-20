@@ -1,0 +1,157 @@
+html {
+    box-sizing: inherit;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header.form,
+main.form,
+footer.form {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+legend {
+    color: #445ba9;
+    padding: 0 0.5rem;
+}
+
+main{
+    padding: 0;
+    min-height: 20rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background-color: rgb(64, 20, 106);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
+
+.horizontal-radio {
+    display: flex;
+    justify-content: space-around;
+}
+
+.radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+fieldset {
+    background-color: rgb(64, 20, 106, 0.15);
+    margin: .5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: .5rem 2%;
+    max-width: 700px;
+} 
+fieldset > label{
+    display: block;
+    padding-top: 1rem;
+    color: #9c2c13;
+    font-size: 1rem;
+    width: 350px;
+
+
+}
+
+.noTopMargin {
+    padding-top: 0px;
+}
+
+
+input[type="text"],
+#installdate,
+textarea,
+select
+
+{
+
+    background-color: #eee;
+    display: block;
+    border: solid 1px #999;
+    border-radius: 5px;
+    padding: .8rem;
+    color: #555;
+    width: 100%;
+    max-width: 350px;
+
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    background-color:  rgb(64, 20, 106, 0.15);
+    border: none;
+    background-image: linear-gradient(rgb(64, 20, 106), rgb(43, 3, 79));
+    color: white;
+    border-radius: 5px;
+    padding: .8rem;
+    width: 96%;
+    max-width: 350px;
+    margin-top: 1.5rem;
+    box-shadow: #999;
+    font-size: 1.2rem;
+    
+}
+
+div:not([class]) {
+    /* Your styles here */
+    margin-top: 1.5rem;
+    
+}
+
+input:required {
+    border-left: solid 8px red;
+
+}
+
+input:required:valid {
+    border-left: solid 8px green;
+
+}
+
+label input:focus {
+    outline: 1px solid blue;
+}
+
+footer {
+   
+    text-align: center;
+    background-color: rgb(64, 20, 106);
+    color: white;
+}
+
+/*  start of the review page */
+main.review p {
+    font-size: 1.5rem;
+    font-style:italic;
+
+}
+
+.counterContainer {
+    background-color: yellow;
+    width: 500px;
+    text-align: center;
+}

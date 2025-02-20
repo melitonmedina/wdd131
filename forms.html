@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Form Development</title>
+    <meta name="description" content="This is a product review form">
+    <meta name="author" content="Meliton Medina">
+    <link rel="stylesheet" href="styles/forms.css">
+    <script src="scripts/forms.js" defer></script>
+</head>
+<body>
+    <header class="form">
+        <h1>Product Review</h1>
+    </header>
+    <main class="form">
+        <form method="get" action="review.html">
+            <fieldset>
+
+                <!--- ------------------------    Select ----------------------------------------->
+                <label>Product Name
+                    <select name="product" id="productSelect" required>
+                        <option value="" disabled selected>Select a Product ...</option>
+                    </select>
+                </label>
+                
+
+                <!-------------------------------Radio buttons------------------------------------- -->
+                <div>Overall Rating</div>
+                <div class="horizontal-radio">
+                    <label class="radio"><span>&star;</span><input type="radio" id="onestar" name="rating" value="one" required></label>
+
+                    <label class="radio"><span>&star;&star;</span><input type="radio" id="twostar" name="rating" value="two" required></label>
+
+                    <label class="radio"><span>&star;&star;&star;</span><input type="radio" id="threestar" name="rating" value="three" required></label>
+
+                    <label class="radio"><span>&star;&star;&star;&star;</span><input type="radio" id="fourstar" name="rating" value="four" required></label>
+
+                    <label class="radio"><span>&star;&star;&star;&star;&star;</span><input type="radio" id="fivestar" name="rating" value="five" required></label>
+                </div>
+
+                <!---------------------------------  Date  ------------------------------------------->
+                <label>Date of Installation<input type="date" id="installdate" name="instalationDate"></label>
+
+
+                 <!-------------------------------  Checkbox -------------------------------------------->
+                <div>Which features did you find usefull in the product?</div>
+                <div class="curesive">(Check all that apply)</div>
+
+                <label class="noTopMargin"><input type="checkbox" id="check-lasting" name="durability" value="yes">Durability</label>
+                <label><input type="checkbox" id="check-ease" name="ease" value="yes">Ease of Use</label>
+                <label><input type="checkbox" id="check-perform" name="performance" value="yes">Performance</label>
+                <label><input type="checkbox" id="check-design" name="Design" value="yes">Design</label>
+
+
+               <!------------------------------------ Review ---------------------------------------------->
+                <div>Written Review <span>(Optional)</span></div>
+                
+                <label class="noTopMargin"><textarea name="comments" id="text-comment" rows="3"></textarea></label>
+
+
+                <div>Your Name <span>(Optional)</span></div>
+                <label class="noTopMargin"><input type="text" name="name" ></label>
+
+                <input type="submit" value="Rate Your Product">
+            
+               
+            </fieldset>
+            
+        </form>
+
+    </main>
+
+    <footer class="form">
+        <p>&COPY; <span id="year"></span> ⛵ Meliton Medina Farro ⛵ NJ</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+    
+</body>
+</html>
