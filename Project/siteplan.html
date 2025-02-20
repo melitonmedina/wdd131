@@ -6,15 +6,65 @@
     <title>WDD 131 - Site Plan</title>
     <meta name="description" content="The page will outline the content of the project website, which is about an environment center located in NJ. The history of the center will be provided along with activities available">
     <meta name="author" content="Meliton Medina">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/sitePlan.css">
 </head>
 <body>
     <header>
-        <h1>The Website Plan</h1>
+        <h1>Site Plan</h1>
     </header>
 
     <main>
-        <h2>Dukes-Farm</h2>
+        <div class="site name">
+            <h2>Site Name:</h2>
+            <h3>Duke Farms Adventure</h3>
+        </div>
+        <div class="site purpose">
+            <h2>Purpose:</h2>
+            <p>To provide a light version of the official Duke Farms website. Where information about the history, upcomming events (next 5 events), and the biking activity are provided. And a membership information form will also be offered.</p>
+        </div>
+        <div class="site scenarios">
+            <h2>Scenarios</h2>
+            <ul>
+                <li>Where Can bike rental information be found?</li>
+                <li>Are there any reservations for lage groups and gatherings available?</li>
+                <li>How can I register for an event?</li>
+            </ul>
+        </div>
+        <div class="site schema">
+            <h2>Color Schema</h2>
+            <ul>
+                <li>Navegation bar text color: #1E1A1A</li>
+                <li>Nav bar background color: #C1E3F0</li>
+                <li>Division, Section background color: #16461D</li>
+                <li>Division, Section text color: #FBFBFB</li>
+            </ul>
+        </div>
+        <div class="site typography">
+            <h2>Typography</h2>
+            <ul>
+                <li>Headings: Open Sans</li>
+                <li>Content: Roboto</li>
+            </ul>
+        </div>
+        <div class="wireframe">
+            <span><h2>wireframe</h2></span>
+            <div class="mobileView">
+                <h3>Mobile View</h3>
+                <img src="images/mobile-view.png" alt="home page mobile view" loading="lazy" width="300" height="700">
+            </div>
+            <div class="widerView">
+                <h3>Wider View</h3>
+                <img src="images/large-view.png" alt="home page mobile view" loading="lazy" width="500" height="800">
+            </div>
+        </div>
     </main>
+    <footer>
+        <p>&COPY; <span id="year"></span> ⛵ Meliton Medina Farro ⛵ NJ</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
     
 </body>
 </html>
