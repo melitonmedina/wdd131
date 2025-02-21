@@ -63,7 +63,7 @@ function createNameOption(upperCaseName, productId) {
     let name = document.createElement('option');
     name.setAttribute("value", productId);
     name.textContent = `${upperCaseName}`;
-    productSelect.appendChild(name);
+    productSection.appendChild(name);
 
   }
 
