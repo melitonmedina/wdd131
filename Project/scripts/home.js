@@ -56,14 +56,19 @@ console.log(windChillFactor);
 
 // begin assigning the corresponding variables
 
-document.getElementById('wind-chill').textContent = windChillFactor;
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('home')) {
 
-document.getElementById('wind').textContent = `${wind} mph`;
+        document.getElementById('wind-chill').textContent = windChillFactor;
 
-document.getElementById('conditions').textContent = conditions;
+        document.getElementById('wind').textContent = `${wind} mph`;
 
-document.getElementById('temp').textContent = temp + '°F';
+        document.getElementById('conditions').textContent = conditions;
 
+        document.getElementById('temp').textContent = temp + '°F';
+
+    }
+})
 
 
 
@@ -128,18 +133,44 @@ function createEventList (name) {
 
 
 const eventContainer =document.querySelector('#eventContainer');
-upcoming.forEach(theEvent => function() {createEventCard(theEvent)});
 
 
 function createEventCard(eventInfo) {
 
+    // ----------------------------------------------
+    // setting wrappers
     let card = document.createElement("section");
+
+    let textContainer = document.createElement('div');
+    textContainer.setAttribute('class', 'textContainer');
+
+    let titleContainer = document.createElement('div');
+    titleContainer.setAttribute('class', 'titleContainer');
+
+    let imageContainer = document.createElement('div');
+    imageContainer.setAttribute('class', 'imageContainer');
+
+    let wrapper = document.createElement('div');
+    wrapper.setAttribute('class', 'wrapper');
+
+    // -----------------------------------------------------
+
+
+
     let name = document.createElement("h3");
+    name.setAttribute('class','name')
+
     let description = document.createElement("p");
+    description.setAttribute('class','descrip' )
     
     let date = document.createElement("p");
+    date.setAttribute('class','date');
+
     let time = document.createElement("p");
+    time.setAttribute('class','time');
+
     let img = document.createElement("img");
+    img.setAttribute('class','image');
 
     name.textContent = eventInfo.name;
     description.innerHTML = `<span class="label">Description:</span> ${eventInfo.description}`;
@@ -152,17 +183,39 @@ function createEventCard(eventInfo) {
     img.setAttribute("alt",`${eventInfo.name} Temple`);
     img.setAttribute("loading", "lazy");
 
-    card.appendChild(name);
-    card.appendChild(description);
-    card.appendChild(date);
-    card.appendChild(time);
-    card.appendChild(img);
+    titleContainer.appendChild(name);
+    textContainer.appendChild(description);
+    textContainer.appendChild(date);
+    textContainer.appendChild(time);
+    imageContainer.appendChild(img);
+
+    wrapper.appendChild(textContainer);
+    wrapper.appendChild(imageContainer);
+
+    card.appendChild(titleContainer);
+    card.appendChild(wrapper);
     eventContainer.appendChild(card);
 }
 
-upcoming.forEach(event => {
-    
-    createEventList(event.name);
-    
-});
 
+
+// let's make sure the page has loaded before creating the cards and  li items
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('events')) {
+
+        upcoming.forEach(event => {
+    
+            createEventList(event.name);
+            
+        });
+
+    }
+     
+    else if (document.getElementById('eventContainer')) {
+
+        upcoming.forEach(theEvent =>createEventCard(theEvent));
+
+    }
+    
+  });
