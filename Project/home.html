@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/home.css">
+    <script src="scripts/home.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Duke Farms Adventures</h1>
+        <button aria-label="menu button" id="hamButton"></button>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a class="anchor1" href="#">Home</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Biking</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <picture>
+            <source srcset="images/webp/owl-9294302_1920.webp" media="(min-width:540px)">
+            <img src="images/webp/animal-9248795_640.webp" alt="Machupichu Peru and two Llamas" loading="lazy" width="1500" height="1500">
+        </picture>
+        <div id="picText">
+            <h2>A Place To Enjoy Nature & Gain a Deeper Appreciation For It</h2>
+        </div>
+
+        <section class="bottom-section">
+            <h2>Weather<span id="weather-emot"></span></h2>
+            <img class="weather-icon" src="../images/icon-mostly-sunny.svg" alt="mostly sunny image" width="75">
+            <ul class="bottom-list">
+                <li class="bottom temp">
+                    <span class="left">Temperature:</span>
+                    <span class="right" id="temp"></span>
+                </li>
+                <li class="bottom conditions">
+                    <span class="left">Conditions:</span>
+                    <span class="right" id="conditions"></span>
+                </li>
+                <li class="bottom wind">
+                    <span class="left">Wind:</span>
+                    <span class="right" id="wind"></span>
+                </li>
+                <li class="bottom wind-chill">
+                    <span class="left">Wind Chill:</span>
+                    <span class="right" id="wind-chill"></span>
+                </li>
+
+            </ul>
+        </section>
+
+        <div class="container-boxes">
+            <form method="get" action="subscribe.html" >
+                <fieldset>
+                    <div><h3>Newsletter</h3></div>
+                    <label>Name <input type="text" name="fname" id="firstName" required></label>
+                    <label>Email <input type="email" name="email" id="emailAddress" required></label>
+                    <input type="submit" value="Subscribe">
+                </fieldset>
+            </form>
+            <div class="upcommingEvents">
+                <h3>Upcomming Events</h3>
+                <ul id="events"></ul>
+            </div>
+        </div>
+        <div class="biking">
+            <h3>For Biking Lovers</h3>
+            <p>Check out our bikes section to learn more</p>
+            <picture>
+                <source srcset="images/webp/leisure-time-1379445_1920.webp" media="(min-width:540px)">
+                <img src="images/webp/mountain-bike-5567847_640.webp" alt="Machupichu Peru and two Llamas" loading="lazy" width="1500" height="1500">
+            </picture>
+        </div>
+
+    </main>
+    <footer>
+        <p>&COPY; <span id="year"></span> ⛵ Meliton Medina Farro ⛵ NJ</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
