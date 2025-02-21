@@ -197,8 +197,6 @@ function createEventCard(eventInfo) {
     eventContainer.appendChild(card);
 }
 
-
-
 // let's make sure the page has loaded before creating the cards and  li items
 
 document.addEventListener('DOMContentLoaded', () => {
