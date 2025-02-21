@@ -1,75 +1,3 @@
-// nav bar section
-const hamButton = document.querySelector('#hamButton');
-const navegation = document.querySelector('.menu');
-const title = document.querySelector('.title');
-
-hamButton.addEventListener('click', function () {
-    navegation.classList.toggle('open');
-    title.classList.toggle('hide');
-    hamButton.classList.toggle('close');
-
-})
-
-
-// the following code will make sure the close the menu based on the resizing of the screen in case the user forgets to close it
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 500) {
-        navegation.classList.remove('open');
-        title.classList.remove('hide');
-        hamButton.classList.remove('close');
-    }
-})
-
-
-// storing the date on a variable
-let currentYear = new Date();
-currentYear = currentYear.getFullYear();
-
-// assigning or populating the current year content
-document.querySelector('#year').textContent = `${currentYear}`;
-
-// beginning of last modified content
-let lastModified = document.lastModified;
-document.querySelector('#lastModified').textContent = `${lastModified}`
-
-
-// weather section
-let temp = 45; // degrees °F
-let wind = 12; // mph
-let conditions = "Partly Sunny";
-let windChillFactor = "";
-
-const windChill = (temperature, windSpeed) => {
-    const calcChill = 35.74 + 0.6215 * temperature - 35.75 * Math.pow(windSpeed, 0.16) + 0.4275 * temperature * Math.pow(windSpeed, 0.16);
-    return calcChill.toFixed(2);
-}
-
-if (temp <= 50 && wind > 3) {
-    windChillFactor = windChill(temp, wind) + "°F";
-}
-
-else {
-    windChillFactor = "N/A";
-}
-console.log(windChillFactor);
-
-// begin assigning the corresponding variables
-
-document.getElementById('wind-chill').textContent = windChillFactor;
-
-document.getElementById('wind').textContent = `${wind} mph`;
-
-document.getElementById('conditions').textContent = conditions;
-
-document.getElementById('temp').textContent = temp + '°F';
-
-
-
-
-// Events and activities object
-
-
 const upcoming = [
     {
         name:"Master Ecologist",
@@ -109,26 +37,13 @@ const upcoming = [
         date: "FRI, MAR 14",
         time: "2:00 PM",
         imageUrl: "/Project/images/webp/greenhouse-4262241_640.webp"
-    },
+    }
 ]
 
-const events = document.querySelector('#events');
-
-//events ul population
-
-function createEventList (name) {
-
-    let eventName = document.createElement("li");
-
-    eventName.textContent = name;
-
-    events.appendChild(eventName);
-
-}
 
 
 const eventContainer =document.querySelector('#eventContainer');
-upcoming.forEach(theEvent => function() {createEventCard(theEvent)});
+
 
 
 function createEventCard(eventInfo) {
@@ -160,9 +75,5 @@ function createEventCard(eventInfo) {
     eventContainer.appendChild(card);
 }
 
-upcoming.forEach(event => {
-    
-    createEventList(event.name);
-    
-});
 
+upcoming.forEach(theEvent =>createEventCard(theEvent));
